@@ -1,0 +1,572 @@
+[
+  {
+    "id": "1",
+    "text": "A banana is a yellow fruit that is soft and sweet.",
+    "region": "Tropical",
+    "type": "Fruit"
+  },
+  {
+    "id": "2",
+    "text": "A lemon is yellow and very sour.",
+    "region": "Tropical",
+    "type": "Fruit"
+  },
+  {
+    "id": "3",
+    "text": "A chili pepper is red and extremely spicy.",
+    "region": "Various",
+    "type": "Spice"
+  },
+  {
+    "id": "4",
+    "text": "An apple can be red, green, or yellow and has a sweet taste.",
+    "region": "Global",
+    "type": "Fruit"
+  },
+  {
+    "id": "5",
+    "text": "Biryani is a flavorful Indian rice dish made with spices, rice, and usually meat or vegetables.",
+    "region": "Hyderabad",
+    "type": "Main Course"
+  },
+  {
+    "id": "6",
+    "text": "Samosa is a fried or baked pastry with a spicy potato filling, popular as a snack in India.",
+    "region": "North India",
+    "type": "Snack"
+  },
+  {
+    "id": "7",
+    "text": "Paneer butter masala is a creamy tomato-based curry made with Indian cottage cheese.",
+    "region": "Punjab",
+    "type": "Main Course"
+  },
+  {
+    "id": "8",
+    "text": "Masala dosa is a thin, crispy fermented crepe filled with spicy mashed potatoes.",
+    "region": "South India",
+    "type": "Breakfast"
+  },
+  {
+    "id": "9",
+    "text": "Chole is a spicy chickpea curry from North India, often eaten with rice or bhature.",
+    "region": "North India",
+    "type": "Main Course"
+  },
+  {
+    "id": "10",
+    "text": "Rasgulla is a spongy dessert made from ball-shaped dumplings of chhena cooked in light syrup.",
+    "region": "Bengal",
+    "type": "Dessert"
+  },
+  {
+    "id": "11",
+    "text": "Naan is a soft and fluffy flatbread that is traditionally baked in a tandoor.",
+    "region": "North India",
+    "type": "Bread"
+  },
+  {
+    "id": "12",
+    "text": "Tandoori chicken is chicken marinated in yogurt and spices, roasted in a tandoor.",
+    "region": "Punjab",
+    "type": "Main Course"
+  },
+  {
+    "id": "13",
+    "text": "Gulab jamun is a deep-fried milk-solid ball soaked in sweet syrup, served as dessert.",
+    "region": "India",
+    "type": "Dessert"
+  },
+  {
+    "id": "14",
+    "text": "Pav bhaji is a spicy vegetable mash served with soft buttered buns.",
+    "region": "Mumbai",
+    "type": "Snack"
+  },
+  {
+    "id": "15",
+    "text": "Raita is a yogurt-based condiment that cools down spicy dishes.",
+    "region": "India",
+    "type": "Condiment"
+  },
+  {
+    "id": "16",
+    "text": "Dhokla is a soft and fluffy savory cake made from fermented rice and chickpea flour.",
+    "region": "Gujarat",
+    "type": "Snack"
+  },
+  {
+    "id": "17",
+    "text": "Butter chicken is a rich tomato gravy dish with tender pieces of marinated chicken.",
+    "region": "Delhi",
+    "type": "Main Course"
+  },
+  {
+    "id": "18",
+    "text": "Lassi is a cold yogurt drink blended with sugar, salt, or fruits like mango.",
+    "region": "Punjab",
+    "type": "Drink"
+  }, 
+   {
+    "id": "19",
+    "text": "Momo is a type of South Asian dumpling popular in Nepal, filled with meat or vegetables and served with spicy chutney.",
+    "region": "Nepal",
+    "type": "Snack"
+  },
+  {
+    "id": "20",
+    "text": "Sel roti is a traditional homemade, sweet, ring-shaped rice bread from Nepal.",
+    "region": "Nepal",
+    "type": "Dessert"
+  },
+  {
+    "id": "21",
+    "text": "Hilsa curry is a traditional Bengali dish made with hilsa fish and mustard gravy.",
+    "region": "Bangladesh",
+    "type": "Main Course"
+  },
+  {
+    "id": "22",
+    "text": "Bhuna khichuri is a spiced rice and lentil dish often served with beef curry in Bangladesh.",
+    "region": "Bangladesh",
+    "type": "Main Course"
+  },
+  {
+    "id": "23",
+    "text": "Nihari is a slow-cooked stew of beef or lamb, eaten as breakfast in Pakistan.",
+    "region": "Pakistan",
+    "type": "Main Course"
+  },
+  {
+    "id": "24",
+    "text": "Chicken Karahi is a spicy curry cooked in a wok-like pan called a karahi, popular in Pakistan.",
+    "region": "Pakistan",
+    "type": "Main Course"
+  },
+  {
+    "id": "25",
+    "text": "Pad Thai is a stir-fried noodle dish with shrimp, peanuts, and tamarind sauce, one of Thailand's national dishes.",
+    "region": "Thailand",
+    "type": "Main Course"
+  },
+  {
+    "id": "26",
+    "text": "Tom Yum is a hot and sour Thai soup made with shrimp, lemongrass, and lime juice.",
+    "region": "Thailand",
+    "type": "Soup"
+  },
+  {
+    "id": "27",
+    "text": "Pho is a Vietnamese noodle soup consisting of broth, rice noodles, herbs, and meat.",
+    "region": "Vietnam",
+    "type": "Soup"
+  },
+  {
+    "id": "28",
+    "text": "Nasi Goreng is Indonesian-style fried rice often cooked with kecap manis, garlic, shallots, and chili.",
+    "region": "Indonesia",
+    "type": "Main Course"
+  },
+  {
+    "id": "29",
+    "text": "Rendang is a spicy meat dish slow-cooked in coconut milk and spices, originating from Indonesia.",
+    "region": "Indonesia",
+    "type": "Main Course"
+  },
+  {
+    "id": "30",
+    "text": "Nasi lemak is Malaysia's national dish consisting of fragrant rice cooked in coconut milk, served with sambal, anchovies, and egg.",
+    "region": "Malaysia",
+    "type": "Main Course"
+  },
+  {
+    "id": "31",
+    "text": "Adobo is a Filipino dish made by marinating meat in vinegar, soy sauce, and garlic, then simmering it.",
+    "region": "Philippines",
+    "type": "Main Course"
+  },
+  {
+    "id": "32",
+    "text": "Halo-halo is a Filipino dessert made from crushed ice, evaporated milk, and mixed ingredients like sweet beans, fruits, and jellies.",
+    "region": "Philippines",
+    "type": "Dessert"
+  }, 
+    {
+    "id": "33",
+    "text": "Peking duck is a famous Beijing dish featuring crispy roasted duck served with pancakes, hoisin sauce, and scallions.",
+    "region": "China",
+    "type": "Main Course"
+  },
+  {
+    "id": "34",
+    "text": "Kung Pao chicken is a spicy stir-fry dish made with chicken, peanuts, vegetables, and chili peppers.",
+    "region": "China",
+    "type": "Main Course"
+  },
+  {
+    "id": "35",
+    "text": "Mapo tofu is a Sichuan dish featuring soft tofu in a spicy chili and bean-based sauce, typically with minced pork.",
+    "region": "Sichuan, China",
+    "type": "Main Course"
+  },
+  {
+    "id": "36",
+    "text": "Xiao long bao are Chinese soup dumplings filled with meat and hot broth, typically served in a bamboo steamer.",
+    "region": "Shanghai",
+    "type": "Snack"
+  },
+  {
+    "id": "37",
+    "text": "Chow mein is a stir-fried noodle dish made with vegetables and sometimes meat or seafood.",
+    "region": "China",
+    "type": "Noodle"
+  },
+  {
+    "id": "38",
+    "text": "Hot and sour soup is a Chinese soup made with mushrooms, tofu, bamboo shoots, and egg, flavored with vinegar and white pepper.",
+    "region": "China",
+    "type": "Soup"
+  },
+  {
+    "id": "39",
+    "text": "Dim sum refers to a variety of small Chinese dishes served with tea, including dumplings, buns, and rolls.",
+    "region": "Cantonese, China",
+    "type": "Snack"
+  },
+  {
+    "id": "40",
+    "text": "Mooncake is a traditional Chinese pastry filled with lotus seed paste or red bean, eaten during the Mid-Autumn Festival.",
+    "region": "China",
+    "type": "Dessert"
+  }, 
+  {
+  "id": "41",
+  "text": "Kimchi is a traditional Korean side dish made from fermented vegetables, usually cabbage and radish, with chili pepper and garlic.",
+  "region": "Korea",
+  "type": "Side Dish"
+},
+{
+  "id": "42",
+  "text": "Bibimbap is a Korean mixed rice dish topped with sautéed vegetables, sliced meat, a fried egg, and chili paste.",
+  "region": "Korea",
+  "type": "Main Course"
+},
+{
+  "id": "43",
+  "text": "Tteokbokki is a popular Korean street food made of chewy rice cakes in a spicy red sauce.",
+  "region": "Korea",
+  "type": "Snack"
+}, 
+{
+  "id": "44",
+  "text": "Beef noodle soup is a beloved Taiwanese dish made with braised beef, vegetables, and noodles in a flavorful broth.",
+  "region": "Taiwan",
+  "type": "Soup"
+},
+{
+  "id": "45",
+  "text": "Lu rou fan is a classic Taiwanese comfort food of minced pork belly cooked in soy sauce, served over rice.",
+  "region": "Taiwan",
+  "type": "Main Course"
+},
+{
+  "id": "46",
+  "text": "Bubble tea is a Taiwanese drink made with tea, milk, and chewy tapioca pearls.",
+  "region": "Taiwan",
+  "type": "Drink"
+}, 
+{
+  "id": "47",
+  "text": "Char siu is a Cantonese-style barbecued pork known for its sweet and savory glaze.",
+  "region": "Hong Kong",
+  "type": "Main Course"
+},
+{
+  "id": "48",
+  "text": "Egg tarts are a popular Hong Kong dessert consisting of a flaky pastry crust filled with egg custard.",
+  "region": "Hong Kong",
+  "type": "Dessert"
+},
+{
+  "id": "49",
+  "text": "Wonton noodles are a Hong Kong dish made with thin egg noodles and wontons in a clear broth.",
+  "region": "Hong Kong",
+  "type": "Noodle"
+}, 
+{
+  "id": "50",
+  "text": "Meat pie is an iconic Australian dish consisting of a flaky pastry filled with minced meat and gravy.",
+  "region": "Australia",
+  "type": "Snack"
+},
+{
+  "id": "51",
+  "text": "Lamingtons are sponge cakes coated in chocolate and rolled in coconut, a popular Australian dessert.",
+  "region": "Australia",
+  "type": "Dessert"
+} ,
+{
+  "id": "52",
+  "text": "Pavlova is a meringue-based dessert topped with fresh fruit and cream, considered a national dish of New Zealand.",
+  "region": "New Zealand",
+  "type": "Dessert"
+},
+{
+  "id": "53",
+  "text": "Hangi is a traditional Māori method of cooking meat and vegetables in an underground oven.",
+  "region": "New Zealand",
+  "type": "Main Course"
+},
+{
+  "id": "54",
+  "text": "Palusami is a Polynesian dish of taro leaves filled with coconut cream and sometimes meat, baked in banana leaves.",
+  "region": "Samoa, South Pacific",
+  "type": "Main Course"
+},
+{
+  "id": "55",
+  "text": "Oka is a Samoan raw fish salad marinated in citrus and coconut milk, similar to ceviche.",
+  "region": "Samoa, South Pacific",
+  "type": "Appetizer"
+},
+{
+  "id": "56",
+  "text": "Lovo is a Fijian feast where food is wrapped in banana leaves and cooked in an earth oven.",
+  "region": "Fiji, South Pacific",
+  "type": "Main Course"
+}
+,
+{
+  "id": "57",
+  "text": "Kokoda is a Fijian dish of raw fish marinated in lime juice and coconut milk, similar to ceviche.",
+  "region": "Fiji, South Pacific",
+  "type": "Appetizer"
+},
+{
+  "id": "58",
+  "text": "Poke is a Hawaiian dish of diced raw fish, typically seasoned with soy sauce and sesame oil.",
+  "region": "Hawaii, USA",
+  "type": "Appetizer"
+},
+{
+  "id": "59",
+  "text": "Spam musubi is a Hawaiian snack made of rice and Spam wrapped in seaweed.",
+  "region": "Hawaii, USA",
+  "type": "Snack"
+},
+{  "id": "60",
+  "text": "Loco moco is a Hawaiian dish consisting of rice topped with a hamburger patty, fried egg, and brown gravy.",
+  "region": "Hawaii, USA",
+  "type": "Main Course"
+},
+{
+  "id": "61",
+  "text": "Sushi is a Japanese dish of vinegared rice combined with seafood, vegetables, and sometimes tropical fruits.",
+  "region": "Japan",
+  "type": "Main Course"
+},
+{
+  "id": "62",
+  "text": "Ramen is a Japanese noodle soup dish with Chinese-style wheat noodles served in a meat or fish-based broth.",
+  "region": "Japan",
+  "type": "Main Course"
+},
+{
+  "id": "63",
+  "text": "Tempura is a Japanese dish of seafood or vegetables that have been battered and deep-fried.",
+  "region": "Japan",
+  "type": "Main Course"
+},
+{
+  "id": "64",
+  "text": "Miso soup is a traditional Japanese soup consisting of a stock called dashi into which softened miso paste is mixed.",
+  "region": "Japan",
+  "type": "Soup"
+},
+{
+  "id": "65",
+  "text": "Okonomiyaki is a savory Japanese pancake containing a variety of ingredients.",
+  "region": "Japan",
+  "type": "Main Course"
+},
+{
+  "id": "66",
+  "text": "Hummus is a Middle Eastern dip or spread made from cooked, mashed chickpeas blended with tahini, olive oil, lemon juice, and garlic.",
+  "region": "Middle East",
+  "type": "Appetizer"
+},
+{
+  "id": "67",
+  "text": "Falafel consists of deep-fried balls of ground chickpeas or fava beans, typically served in pita bread.",
+  "region": "Middle East",
+  "type": "Main Course"
+},
+{
+  "id": "68",
+  "text": "Shawarma is a Middle Eastern meat preparation where thin slices of lamb, chicken, or beef are stacked and roasted on a vertical rotisserie.",
+  "region": "Middle East",
+  "type": "Main Course"
+},
+{
+  "id": "69",
+  "text": "Tabbouleh is a Levantine vegetarian salad made of finely chopped parsley, tomatoes, mint, and bulgur.",
+  "region": "Middle East",
+  "type": "Salad"
+},
+{
+  "id": "70",
+  "text": "Baklava is a rich, sweet dessert pastry made of layers of filo filled with chopped nuts and sweetened with syrup or honey.",
+  "region": "Middle East",
+  "type": "Dessert"
+},
+{
+  "id": "71",
+  "text": "Buuz are Mongolian steamed dumplings filled with minced meat, typically mutton or beef.",
+  "region": "Mongolia",
+  "type": "Main Course"
+},
+{
+  "id": "72",
+  "text": "Khorkhog is a Mongolian barbecue dish where meat is cooked with hot stones inside a sealed container.",
+  "region": "Mongolia",
+  "type": "Main Course"
+},
+{
+  "id": "73",
+  "text": "Airag is a traditional Mongolian alcoholic drink made from fermented mare's milk.",
+  "region": "Mongolia",
+  "type": "Beverage"
+},
+{
+  "id": "74",
+  "text": "Boortsog are Mongolian deep-fried cookies often served with tea or used as a dessert.",
+  "region": "Mongolia",
+  "type": "Dessert"
+},
+{
+  "id": "75",
+  "text": "Suutei tsai is a traditional Mongolian milk tea made with green tea, milk, water, and salt.",
+  "region": "Mongolia",
+  "type": "Beverage"
+},
+{
+  "id": "76",
+  "description": "Australian meat pies are iconic handheld pastries filled with seasoned minced beef, onions, and rich gravy, encased in flaky pastry. This comfort food originated from British influences but became a staple in Australian culture, often enjoyed at sporting events or as a quick meal. The pie features a tender, savory filling that combines ground meat with vegetables and herbs, baked to perfection for a crispy exterior and juicy interior. It's a symbol of Australian cuisine, representing the country's love for hearty, no-fuss dishes that warm the soul on chilly days.",
+  "ingredients": ["shortcrust pastry", "minced beef", "onion", "carrot", "beef stock", "Worcestershire sauce", "flour", "butter", "egg"],
+  "dietary_tags": ["contains gluten", "contains dairy", "meat"],
+  "region": "Australia",
+  "type": "Main Course"
+},
+{
+  "id": "77",
+  "description": "Barramundi is a prized Australian fish known for its delicate, white flesh and mild flavor, making it a versatile seafood option. Native to the Indo-Pacific region, it's sustainably farmed in Australia and prized for its nutritional benefits, including high omega-3 fatty acids and protein. Often grilled, baked, or pan-fried, barramundi absorbs flavors well, pairing beautifully with herbs, lemon, and spices. This fish represents Australian culinary heritage, especially in coastal areas, where it's celebrated for its freshness and health-promoting qualities, supporting heart health and providing essential nutrients.",
+  "ingredients": ["barramundi fillets", "olive oil", "lemon", "garlic", "fresh herbs", "salt", "pepper"],
+  "dietary_tags": ["gluten-free", "dairy-free", "pescatarian", "high in protein", "omega-3 rich"],
+  "region": "Australia",
+  "type": "Main Course"
+},
+{
+  "id": "78",
+  "description": "Vegemite is a thick, dark brown Australian food spread made from leftover brewers' yeast extract with various vegetable and spice additives. Created in the early 20th century, it became a cultural icon, often spread thinly on buttered toast for breakfast. Its strong, salty, and slightly bitter taste is an acquired one, but Australians cherish it as a source of B vitamins and minerals. This spread embodies Australian identity, frequently referenced in jokes and traditions, providing a quick energy boost and nutritional support in a small serving.",
+  "ingredients": ["brewers' yeast extract", "vegetable extracts", "salt", "malt extract", "spice extracts"],
+  "dietary_tags": ["vegan", "gluten-free", "low calorie", "vitamin B rich"],
+  "region": "Australia",
+  "type": "Spread"
+},
+{
+  "id": "79",
+  "description": "Anzac biscuits are sweet, crunchy cookies originating from Australia and New Zealand, named after the Australian and New Zealand Army Corps. Made with oats, coconut, and golden syrup, they were sent to soldiers during World War I. These biscuits have a chewy texture with a caramel-like flavor, combining rolled oats, desiccated coconut, and brown sugar for a satisfying treat. Symbolizing remembrance and national pride, they offer sustained energy from complex carbohydrates and healthy fats, making them a nutritious snack choice.",
+  "ingredients": ["rolled oats", "desiccated coconut", "brown sugar", "butter", "golden syrup", "baking soda", "boiling water"],
+  "dietary_tags": ["contains gluten", "contains dairy", "vegetarian"],
+  "region": "Australia",
+  "type": "Dessert"
+},
+{
+  "id": "80",
+  "description": "Pavlova is a meringue-based dessert with a crisp crust and soft, marshmallow-like interior, topped with whipped cream and fresh fruit. Originating in Australia (or New Zealand), it's named after ballerina Anna Pavlova. The dessert features egg whites whipped with sugar and cornstarch, baked slowly to create a light, airy base. Topped with cream and seasonal fruits like passionfruit or berries, it provides a balance of sweetness and freshness. This iconic treat highlights Australian culinary creativity, offering a lighter alternative to heavy cakes while delivering protein from eggs and vitamins from fruits.",
+  "ingredients": ["egg whites", "caster sugar", "cornstarch", "white vinegar", "whipped cream", "fresh fruit", "passionfruit"],
+  "dietary_tags": ["gluten-free", "contains dairy", "vegetarian", "high in protein"],
+  "region": "Australia",
+  "type": "Dessert"
+},
+{
+  "id": "81",
+  "description": "Quinoa salad is a nutritious dish combining protein-rich quinoa with fresh vegetables, herbs, and a light dressing. This ancient grain, originating from South America, is packed with complete protein, fiber, and essential amino acids, making it ideal for vegetarians and vegans. Mixed with cucumber, tomatoes, avocado, and feta, it offers a refreshing, crunchy texture. The lemon-olive oil dressing adds brightness, enhancing flavors while providing healthy fats. This salad promotes digestive health, supports muscle repair, and delivers sustained energy through its balanced macronutrients.",
+  "ingredients": ["quinoa", "cucumber", "cherry tomatoes", "red onion", "avocado", "feta cheese", "fresh herbs", "lemon juice", "olive oil", "salt", "pepper"],
+  "dietary_tags": ["gluten-free", "high in protein", "fiber-rich", "vegetarian", "omega-3 from avocado"],
+  "region": "Global",
+  "type": "Salad"
+},
+{
+  "id": "82",
+  "description": "Greek yogurt parfait layers creamy Greek yogurt with fresh berries and crunchy granola for a satisfying breakfast or snack. Greek yogurt is strained to remove whey, resulting in a thicker, protein-packed product with probiotics for gut health. Mixed with antioxidant-rich berries like blueberries and strawberries, it provides vitamins C and K, while granola adds fiber and healthy fats. This parfait supports weight management, bone health from calcium, and immune function, making it a powerhouse of nutrition in a delicious, easy-to-prepare format.",
+  "ingredients": ["Greek yogurt", "mixed berries", "granola", "honey", "chia seeds"],
+  "dietary_tags": ["gluten-free option", "high in protein", "probiotic", "calcium-rich", "antioxidant"],
+  "region": "Global",
+  "type": "Breakfast"
+},
+{
+  "id": "83",
+  "description": "Grilled chicken breast is a lean protein source marinated and cooked to juicy perfection, offering high-quality amino acids for muscle building and repair. Seasoned with herbs and garlic, it's low in fat and calories, making it ideal for weight loss and heart health. Grilling preserves nutrients while creating a flavorful crust. Paired with vegetables, it provides a complete meal rich in B vitamins, selenium, and antioxidants. This versatile dish supports immune function, energy production, and overall vitality through its nutrient-dense profile.",
+  "ingredients": ["chicken breast", "olive oil", "garlic", "lemon juice", "fresh herbs", "salt", "pepper"],
+  "dietary_tags": ["gluten-free", "dairy-free", "high in protein", "low fat", "lean meat"],
+  "region": "Global",
+  "type": "Main Course"
+},
+{
+  "id": "84",
+  "description": "Baked salmon is a heart-healthy fish dish rich in omega-3 fatty acids that reduce inflammation and support cardiovascular health. This fatty fish provides complete protein and vitamin D for bone strength and immune support. Seasoned with dill, lemon, and garlic, it's baked to flaky tenderness, preserving its natural oils. Accompanied by asparagus or broccoli, it offers a balanced meal with antioxidants and fiber. Regular consumption may improve brain function, reduce arthritis symptoms, and promote healthy skin through its essential nutrients.",
+  "ingredients": ["salmon fillet", "olive oil", "lemon", "garlic", "fresh dill", "salt", "pepper", "vegetables"],
+  "dietary_tags": ["gluten-free", "dairy-free", "high in protein", "omega-3 rich", "vitamin D"],
+  "region": "Global",
+  "type": "Main Course"
+},
+{
+  "id": "85",
+  "description": "Lentil soup is a hearty, plant-based dish made from protein-packed lentils simmered with vegetables and aromatic spices. Lentils provide iron, folate, and fiber for energy, blood health, and digestion. Combined with carrots, celery, and tomatoes, it creates a comforting, flavorful broth that's naturally vegan. Herbs like cumin and thyme enhance taste while offering anti-inflammatory benefits. This soup supports weight management, lowers cholesterol, and provides sustained satiety, making it an excellent choice for overall health and meal prep.",
+  "ingredients": ["green or brown lentils", "onion", "carrots", "celery", "garlic", "vegetable broth", "tomatoes", "cumin", "thyme", "salt", "pepper"],
+  "dietary_tags": ["vegan", "gluten-free", "high in protein", "fiber-rich", "iron-rich"],
+  "region": "Global",
+  "type": "Soup"
+},
+{
+  "id": "86",
+  "description": "Tacos are a vibrant Mexican dish featuring seasoned meat or vegetables wrapped in soft corn tortillas, topped with fresh salsa, cheese, and cilantro. The cooking method involves grilling or sautéing fillings like beef, chicken, or beans for tender, flavorful results. Corn tortillas provide a gluten-free base, while toppings add crunch and nutrition. This handheld meal offers a balance of protein, carbs, and vegetables, supporting cultural traditions while delivering vitamins A and C. Customizable and fun to assemble, tacos promote healthy eating through portion control and fresh ingredients.",
+  "ingredients": ["corn tortillas", "ground beef or chicken", "onion", "garlic", "cumin", "chili powder", "lettuce", "tomato", "cheese", "salsa", "cilantro", "lime"],
+  "dietary_tags": ["gluten-free", "customizable protein", "vegetable-rich", "vitamin C"],
+  "region": "Mexico",
+  "type": "Main Course"
+},
+{
+  "id": "87",
+  "description": "Sushi rolls, or maki, are Japanese delicacies where vinegared rice is wrapped in seaweed with fresh fish, vegetables, and sometimes avocado. The preparation involves carefully layering ingredients and rolling tightly before slicing. Cooked via assembly rather than heat, it preserves nutrients and textures. Featuring omega-3 rich salmon or tuna, it provides protein and healthy fats. Accompanied by soy sauce and wasabi, this dish offers iodine from seaweed and antioxidants, supporting thyroid health and reducing inflammation in a beautifully presented, mindful eating experience.",
+  "ingredients": ["sushi rice", "nori seaweed", "fresh fish", "cucumber", "avocado", "rice vinegar", "soy sauce", "wasabi"],
+  "dietary_tags": ["gluten-free option", "high in protein", "omega-3 rich", "low calorie"],
+  "region": "Japan",
+  "type": "Main Course"
+},
+{
+  "id": "88",
+  "description": "Paella is a Spanish rice dish originating from Valencia, cooked in a wide pan with saffron-infused rice, seafood, chicken, and vegetables. The traditional method involves simmering ingredients together for even cooking and flavor melding. Saffron provides a golden hue and subtle taste, while bomba rice absorbs broth perfectly. Featuring mussels, shrimp, and peas, it offers complete proteins and minerals. This communal dish celebrates Spanish culture, delivering antioxidants from vegetables and healthy fats from olive oil in a nutritious, one-pan meal.",
+  "ingredients": ["bomba rice", "seafood", "chicken", "peas", "bell peppers", "onion", "garlic", "saffron", "olive oil", "chicken broth"],
+  "dietary_tags": ["gluten-free", "high in protein", "antioxidant-rich", "omega-3 from seafood"],
+  "region": "Spain",
+  "type": "Main Course"
+},
+{
+  "id": "89",
+  "description": "Borscht is a hearty Ukrainian beet soup cooked by simmering beets with vegetables, potatoes, and sometimes meat in a rich broth. The slow-cooking method extracts deep flavors and nutrients from root vegetables. Beets provide betalains for liver health and antioxidants, while cabbage adds fiber and vitamin C. Often served with sour cream, it offers probiotics and calcium. This traditional dish warms the body, supports digestion, and provides sustained energy through complex carbs and proteins, embodying Eastern European comfort food culture.",
+  "ingredients": ["beets", "potatoes", "carrots", "onion", "cabbage", "beef or vegetable broth", "tomatoes", "garlic", "dill", "sour cream"],
+  "dietary_tags": ["gluten-free", "vitamin C rich", "antioxidant", "fiber-rich", "probiotic option"],
+  "region": "Ukraine",
+  "type": "Soup"
+},
+{
+  "id": "90",
+  "description": "Butter chicken is a creamy Indian curry made by marinating chicken in yogurt and spices, then simmering in a tomato-based sauce with butter and cream. The cooking process involves slow cooking for tender meat and rich flavors. Garam masala and chili provide warmth, while yogurt tenderizes the chicken. Served with rice or naan, it offers protein, calcium, and anti-inflammatory spices. This beloved dish represents Indian cuisine's blend of Mughal and local influences, delivering comfort and nutrition in every aromatic bite.",
+  "ingredients": ["chicken", "yogurt", "tomatoes", "onion", "garlic", "ginger", "butter", "cream", "garam masala", "chili powder", "cumin"],
+  "dietary_tags": ["gluten-free", "high in protein", "calcium-rich", "spicy"],
+  "region": "India",
+  "type": "Main Course"
+}
+]
