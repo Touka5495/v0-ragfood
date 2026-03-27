@@ -4,7 +4,7 @@ export interface ChatMessage {
   content: string
   sources?: SearchResult[]
   model?: string
-  timestamp: Date
+  timestamp: Date | string
 }
 
 export interface SearchResult {
@@ -18,8 +18,8 @@ export interface ChatSession {
   id: string
   title: string
   messages: ChatMessage[]
-  createdAt: Date
-  updatedAt: Date
+  createdAt: Date | string
+  updatedAt: Date | string
 }
 
 export interface RAGResponse {
