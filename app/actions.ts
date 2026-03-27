@@ -2,16 +2,16 @@
 
 import { generateText } from 'ai'
 import { createGroq } from '@ai-sdk/groq'
-import { SearchClient } from '@upstash/search'
+import { Index } from '@upstash/vector'
 import type { RAGResponse, SearchResult, ModelOption } from '@/lib/types'
 
 const groq = createGroq({
   apiKey: process.env.GROQ_API_KEY,
 })
 
-const searchClient = new SearchClient({
-  url: process.env.UPSTASH_SEARCH_REST_URL!,
-  token: process.env.UPSTASH_SEARCH_REST_TOKEN!,
+const index = new Index({
+  url: process.env.UPSTASH_VECTOR_REST_URL!,
+  token: process.env.UPSTASH_VECTOR_REST_TOKEN!,
 })
 
 export async function queryRAG(
@@ -19,16 +19,17 @@ export async function queryRAG(
   model: ModelOption = 'llama-3.1-8b-instant'
 ): Promise<RAGResponse> {
   try {
-    // Query Upstash Search for relevant context
-    const searchResults = await searchClient.search({
-      query,
+    // Query Upstash Vector for relevant context using semantic search
+    const queryResults = await index.query({
+      data: query,
       topK: 3,
+      includeMetadata: true,
     })
 
     // Transform search results
-    const sources: SearchResult[] = searchResults.map((result, index) => ({
-      id: result.id || `source-${index}`,
-      content: result.metadata?.text as string || result.metadata?.content as string || JSON.stringify(result.metadata) || 'No content available',
+    const sources: SearchResult[] = queryResults.map((result, idx) => ({
+      id: String(result.id) || `source-${idx}`,
+      content: (result.metadata?.text as string) || (result.metadata?.content as string) || JSON.stringify(result.metadata) || 'No content available',
       metadata: result.metadata || {},
       score: result.score || 0,
     }))
