@@ -5,20 +5,31 @@ import { createGroq } from '@ai-sdk/groq'
 import { Index } from '@upstash/vector'
 import type { RAGResponse, SearchResult, ModelOption } from '@/lib/types'
 
-const groq = createGroq({
-  apiKey: process.env.GROQ_API_KEY,
-})
+// Lazy initialization to avoid module-level errors
+function getGroqClient() {
+  const apiKey = process.env.GROQ_API_KEY
+  if (!apiKey) {
+    throw new Error('GROQ_API_KEY environment variable is not set')
+  }
+  return createGroq({ apiKey })
+}
 
-const index = new Index({
-  url: process.env.UPSTASH_VECTOR_REST_URL!,
-  token: process.env.UPSTASH_VECTOR_REST_TOKEN!,
-})
+function getVectorIndex() {
+  const url = process.env.UPSTASH_VECTOR_REST_URL
+  const token = process.env.UPSTASH_VECTOR_REST_TOKEN
+  if (!url || !token) {
+    throw new Error('Upstash Vector environment variables are not set')
+  }
+  return new Index({ url, token })
+}
 
 export async function queryRAG(
   query: string,
   model: ModelOption = 'llama-3.1-8b-instant'
 ): Promise<RAGResponse> {
   try {
+    const index = getVectorIndex()
+    
     // Query Upstash Vector for relevant context using semantic search
     const queryResults = await index.query({
       data: query,
@@ -56,6 +67,7 @@ Guidelines:
 - Suggest ingredient substitutions when appropriate
 - Be enthusiastic about food while remaining informative`
 
+    const groq = getGroqClient()
     const { text } = await generateText({
       model: groq(model),
       system: systemPrompt,
