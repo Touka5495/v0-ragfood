@@ -4,7 +4,7 @@ import { generateText } from 'ai'
 import { createGroq } from '@ai-sdk/groq'
 import { Index } from '@upstash/vector'
 
-// Type definitions inline to avoid import issues
+// Type definitions
 interface SearchResult {
   id: string
   content: string
@@ -24,22 +24,20 @@ export async function queryRAG(
   query: string,
   model: ModelOption = 'llama-3.1-8b-instant'
 ): Promise<RAGResponse> {
-  // Debug: Check environment variables (without exposing full keys)
+  console.log('[v0] queryRAG called with:', { query: query.substring(0, 50), model })
+
+  // Check environment variables
   const groqKey = process.env.GROQ_API_KEY
   const upstashUrl = process.env.UPSTASH_VECTOR_REST_URL
   const upstashToken = process.env.UPSTASH_VECTOR_REST_TOKEN
 
-  console.log('[v0] Environment check:', {
+  console.log('[v0] Env check:', {
     hasGroqKey: !!groqKey,
-    groqKeyPrefix: groqKey ? groqKey.substring(0, 8) + '...' : 'undefined',
     hasUpstashUrl: !!upstashUrl,
-    upstashUrlPrefix: upstashUrl ? upstashUrl.substring(0, 20) + '...' : 'undefined',
     hasUpstashToken: !!upstashToken,
-    upstashTokenPrefix: upstashToken ? upstashToken.substring(0, 8) + '...' : 'undefined',
   })
 
   if (!groqKey) {
-    console.error('[v0] GROQ_API_KEY is missing')
     return {
       answer: 'Configuration error: GROQ_API_KEY is not set. Please add it to your environment variables.',
       sources: [],
@@ -48,9 +46,8 @@ export async function queryRAG(
   }
 
   if (!upstashUrl || !upstashToken) {
-    console.error('[v0] Upstash Vector credentials missing')
     return {
-      answer: 'Configuration error: Upstash Vector credentials are not set. Please configure your Upstash Vector integration.',
+      answer: 'Configuration error: Upstash Vector credentials are not set. Please configure UPSTASH_VECTOR_REST_URL and UPSTASH_VECTOR_REST_TOKEN.',
       sources: [],
       model,
     }
@@ -58,73 +55,79 @@ export async function queryRAG(
 
   let sources: SearchResult[] = []
 
-  // Step 1: Query Upstash Vector
+  // Step 1: Query Upstash Vector for context
   try {
-    console.log('[v0] Creating Upstash Vector index...')
+    console.log('[v0] Creating Upstash index...')
     const index = new Index({
       url: upstashUrl,
       token: upstashToken,
     })
 
-    console.log('[v0] Querying Upstash Vector with:', { query, topK: 3 })
+    console.log('[v0] Querying vector database...')
     const queryResults = await index.query({
       data: query,
       topK: 3,
       includeMetadata: true,
     })
 
-    console.log('[v0] Upstash Vector response:', {
-      resultCount: queryResults?.length ?? 0,
-      results: queryResults?.map(r => ({ id: r.id, score: r.score })),
-    })
+    console.log('[v0] Query results count:', queryResults?.length ?? 0)
 
-    // Transform and serialize search results
-    sources = (queryResults || []).map((result, idx) => {
-      const content = 
-        (result.metadata?.text as string) || 
-        (result.metadata?.content as string) || 
-        (result.metadata ? JSON.stringify(result.metadata) : 'No content available')
-      
-      return {
-        id: String(result.id ?? `source-${idx}`),
-        content: String(content),
-        metadata: result.metadata ? JSON.parse(JSON.stringify(result.metadata)) : {},
-        score: Number(result.score ?? 0),
-      }
-    })
+    // Transform results to plain objects
+    if (queryResults && queryResults.length > 0) {
+      sources = queryResults.map((result, idx) => {
+        const rawContent = result.metadata?.text ?? result.metadata?.content ?? ''
+        const content = typeof rawContent === 'string' ? rawContent : JSON.stringify(rawContent || {})
+        
+        // Create a clean metadata object
+        const cleanMetadata: Record<string, unknown> = {}
+        if (result.metadata) {
+          for (const [key, value] of Object.entries(result.metadata)) {
+            if (typeof value === 'string' || typeof value === 'number' || typeof value === 'boolean') {
+              cleanMetadata[key] = value
+            } else if (value !== null && value !== undefined) {
+              cleanMetadata[key] = String(value)
+            }
+          }
+        }
 
-    console.log('[v0] Transformed sources:', sources.length)
-  } catch (vectorError) {
-    console.error('[v0] Upstash Vector error:', vectorError)
-    // Continue without sources - we can still generate a response
+        return {
+          id: String(result.id ?? `source-${idx}`),
+          content: content || 'No content available',
+          metadata: cleanMetadata,
+          score: typeof result.score === 'number' ? result.score : 0,
+        }
+      })
+    }
+
+    console.log('[v0] Sources transformed:', sources.length)
+  } catch (err) {
+    console.error('[v0] Vector query error:', err instanceof Error ? err.message : err)
+    // Continue without sources
   }
 
-  // Step 2: Generate response using Groq
+  // Step 2: Generate response with Groq
   try {
     console.log('[v0] Creating Groq client...')
     const groq = createGroq({ apiKey: groqKey })
 
-    const context = sources
-      .map((source, i) => `[Source ${i + 1}]: ${source.content}`)
-      .join('\n\n')
+    const contextText = sources.length > 0
+      ? sources.map((s, i) => `[Source ${i + 1}]: ${s.content}`).join('\n\n')
+      : 'No specific context available.'
 
-    const systemPrompt = `You are a knowledgeable culinary assistant specializing in food, recipes, cooking techniques, and cuisines from around the world. 
+    const systemPrompt = `You are a knowledgeable culinary assistant specializing in food, recipes, cooking techniques, and cuisines from around the world.
 
-Use the provided context to answer questions about food and cooking. If the context contains relevant information, incorporate it into your response. If the context doesn't contain relevant information, use your general knowledge about food and cooking to provide a helpful response.
-
-Always be friendly, encouraging, and provide practical cooking tips when appropriate. Format your responses with clear sections when discussing recipes or detailed techniques.
+Use the provided context to answer questions. If the context contains relevant information, incorporate it. If not, use your general knowledge about food and cooking.
 
 Context from knowledge base:
-${context || 'No specific context available for this query.'}
+${contextText}
 
 Guidelines:
 - Provide accurate, helpful information about food and cooking
-- Include specific measurements and temperatures when discussing recipes
-- Mention dietary considerations when relevant (allergens, vegetarian options, etc.)
-- Suggest ingredient substitutions when appropriate
-- Be enthusiastic about food while remaining informative`
+- Include specific measurements and temperatures when relevant
+- Mention dietary considerations when appropriate
+- Be friendly and encouraging`
 
-    console.log('[v0] Calling Groq generateText with model:', model)
+    console.log('[v0] Calling Groq with model:', model)
     const { text } = await generateText({
       model: groq(model),
       system: systemPrompt,
@@ -133,21 +136,19 @@ Guidelines:
       temperature: 0.7,
     })
 
-    console.log('[v0] Groq response received, length:', text?.length)
+    console.log('[v0] Response received, length:', text?.length ?? 0)
 
-    // Ensure we return plain serializable objects
     return {
-      answer: String(text || 'No response generated'),
-      sources: sources,
-      model: String(model),
+      answer: text || 'No response generated.',
+      sources,
+      model,
     }
-  } catch (groqError) {
-    console.error('[v0] Groq error:', groqError)
-    const errorMessage = groqError instanceof Error ? groqError.message : 'Unknown error'
+  } catch (err) {
+    console.error('[v0] Groq error:', err instanceof Error ? err.message : err)
     return {
-      answer: `I encountered an error while generating a response: ${errorMessage}. Please try again.`,
-      sources: sources,
-      model: String(model),
+      answer: `Error generating response: ${err instanceof Error ? err.message : 'Unknown error'}. Please try again.`,
+      sources,
+      model,
     }
   }
 }
